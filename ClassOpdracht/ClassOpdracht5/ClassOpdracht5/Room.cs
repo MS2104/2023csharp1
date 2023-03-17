@@ -16,7 +16,7 @@ namespace ClassOpdracht5
                 tiles[i] = new Tile[size];//array in een array 
                 for (int i2 = 0; i2 < size; i2++)
                 {
-                    char graphic = '.';
+                    char graphic = ' '; // Een empty character gebruiken voor de lege vakjes ziet er wat cleaner uit imo
                     if (i == 0 || i == size - 1 || i2 == 0 || i2 == size - 1)
                     {
                         graphic = '#';
