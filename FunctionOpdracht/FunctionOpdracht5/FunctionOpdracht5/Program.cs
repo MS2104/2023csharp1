@@ -17,9 +17,8 @@ namespace FunctionOpdracht5
 
         private void Run()
         {
-
 			Console.WriteLine("choose your hero's name");
-            heroName = GetHeroName(); //heroName zit op Program (this)
+            heroName = GetHeroName(heroName); //heroName zit op Program (this)
 
             Console.WriteLine($"your hero is called {heroName}");
 
@@ -28,28 +27,49 @@ namespace FunctionOpdracht5
             //1) roep hier de SetHealth aan met een 1000;
             SetHealth(100);
 
-            while(IsHeroDead())//4) maak deze function, deze geeft een true  terug als health <= 0, anders geeft deze false terug
+            while(!IsHeroDead)//4) maak deze function, deze geeft een true  terug als health <= 0, anders geeft deze false terug
             {
                 //fight!
 
-               	int dam = RollDamage();//5) maak deze function, je mag een random gebruiken of een vast getal
+               	int dam = RollDamage(10);//5) maak deze function, je mag een random gebruiken of een vast getal
               
             	Console.WriteLine($"your hero takes {dam} damage");
 				DoDamageToHero(dam);//6) maak deze function, deze haalt dam af van de health (op program)
 
             	Console.WriteLine($"your hero has {health} health");
+
+                if (health <= 0)
+                {
+                    IsHeroDead = true;
+                }
+                
+                else
+                {
+                    IsHeroDead = false;
+                }
             }
 
             Console.WriteLine("oefening compleet!");
         }
 
+        private int DoDamageToHero(int dam)
+        {
+            health -= dam;
+            return dam;
+        }
+
         //2) maak hier een function GetHeroName die met Console.ReadLine() een helden naam vraagt
-        private string GetHeroName(string heroName)
+        public string GetHeroName(string heroName)
         {
             Console.Write("What will your hero be named?");
             Console.ReadLine();
 
             return heroName;
+        }
+
+        private int RollDamage(int dam)
+        {
+            return dam;
         }
 
         //3) maak hier een function SetHeroStrength met 1 argument  van type 'int'
