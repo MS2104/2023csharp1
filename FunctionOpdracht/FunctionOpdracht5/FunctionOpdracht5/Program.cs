@@ -7,7 +7,7 @@ namespace FunctionOpdracht5
         string heroName;
         int heroStrength;
         int health;
-
+        bool IsHeroDead = false;
         static void Main(string[] args)
         {
             Program program = new Program();
@@ -26,6 +26,7 @@ namespace FunctionOpdracht5
             SetHeroStrength(9999);//super sterk natuurlijk
 
             //1) roep hier de SetHealth aan met een 1000;
+            SetHealth(100);
 
             while(IsHeroDead())//4) maak deze function, deze geeft een true  terug als health <= 0, anders geeft deze false terug
             {
@@ -43,10 +44,21 @@ namespace FunctionOpdracht5
         }
 
         //2) maak hier een function GetHeroName die met Console.ReadLine() een helden naam vraagt
+        private string GetHeroName(string heroName)
+        {
+            Console.Write("What will your hero be named?");
+            Console.ReadLine();
+
+            return heroName;
+        }
 
         //3) maak hier een function SetHeroStrength met 1 argument  van type 'int'
         //in de body van de function zet de waarde van heroStrength (van program) het 
-
+        private int SetHeroStrength(int str)
+        {
+            heroStrength = str;
+            return str;
+        }
         //
         private void SetHealth(int health)
         {
