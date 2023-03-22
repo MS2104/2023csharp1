@@ -4,32 +4,28 @@ namespace functions_depth
 {
     class Program
     {
-        string text = "Hello World!";
-        int getal = 14;
-        bool mewhenthe = true;
-
         static void Main(string[] args)
         {
-            StringFunctie1(tekst, getal);
+            string tekst = "Hello World!";
+            FirstFunction(tekst);
         }
-        static void StringFunctie1(string tekst)
+        static void FirstFunction(string str)
         {
-            StringFunctie2();
-        }
-
-        static void StringFunctie2(string tekst, int getal)
-        {
-            StringFunctie3();
+            int myInt = 42;
+            SecondFunction(str, myInt);
         }
 
-        static void StringFunctie3(string tekst, int getal, bool mewhenthe)
+        static void SecondFunction(string str, int num)
         {
-            if (mewhenthe)
-            {
-                Console.WriteLine(tekst);
-                Console.WriteLine(getal);
-                Console.WriteLine(mewhenthe);
-            }
+            bool thisiabool = true;
+            ThirdFunction(str, thisiabool, num);
+        }
+
+        static void ThirdFunction(string str, bool boolname, int num)
+        {
+            Console.WriteLine("string: " + str);
+            Console.WriteLine("boolean: " + boolname);
+            Console.WriteLine("integer: " + num);
         }
     }
 }
