@@ -11,8 +11,8 @@ namespace functions_depth
         }
         static void FirstFunction(string str)
         {
-            int myInt = 42;
-            SecondFunction(str, myInt);
+            int getal = 42;
+            SecondFunction(str, getal);
         }
 
         static void SecondFunction(string str, int num)
